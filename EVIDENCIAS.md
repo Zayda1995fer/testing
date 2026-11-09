@@ -2,7 +2,9 @@
 
 Capturas de las ejecuciones reales del proyecto, tomadas el **9 de noviembre de 2026 a las 17:30 (hora del centro de México)**
 en un entorno local: Node.js 22, PostgreSQL 16 y k6 v0.54.0.
-Cada imagen es la salida real de la terminal, con el comando que se ejecutó en la primera línea.
+Las capturas se presentan en una ventana de **Windows PowerShell** con la ruta del proyecto
+`C:\Users\zayda\Documents\ING 10 Cuatri\TACHO (app moviles)\ejercicio-tester`.
+Cada imagen muestra en la primera línea el comando y debajo la salida real que produjo.
 Las salidas en texto completo están en `evidencia/`.
 
 > Todas las cuentas son sintéticas (`@example.test`). En ninguna captura aparecen tokens ni contraseñas reales.
