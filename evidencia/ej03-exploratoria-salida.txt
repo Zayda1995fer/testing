@@ -1,0 +1,23 @@
+# Sesión exploratoria – salida cruda (API local, usuario sintético)
+--- 1 empty list
+{"items":[],"limit":20,"offset":0}
+--- 2 long ascii 120
+201 {"id":"5a8205d3-2104-4f34-a886-d5fb9977b71f","title":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+--- 3 61 emoji (61 visible chars)
+400 {"error":"Enter a valid title."}
+--- 4 60 emoji
+201 {"id":"0b965872-afc1-4586-8bdc-81c65a94bf46","title":"😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀�
+--- 5 blank
+400 {"error":"Enter a valid title."}
+--- 6 only zero-width space
+201 {"id":"82a42367-6913-4c39-ad31-63e840786caf","title":"​","completed":false,"createdAt":"2026-11-09T23:16:26.458Z","updatedAt":"2026-11-09T23:16:26.458Z"}
+--- 7 only NBSP
+400 {"error":"Enter a valid title."}
+--- 8 newline inside
+201 {"id":"6bd17a9a-e30f-4f4f-9f8b-c8e6965fd173","title":"line1\nline2","completed":false,"createdAt":"2026-11-09T23:16:26.473Z","updatedAt":"2026-11-09T23:16:26.47
+--- 9 rapid repeated taps (5 parallel identical POSTs)
+201 201 201 201 201 
+copies of Doble tap: 5
+--- 10 edit with server down (interrupted connectivity)
+PATCH con servidor caído -> code=000 (Couldn't connect to server)
+Tras reiniciar: título sigue 'Doble tap' (sin escritura parcial); access token sigue siendo válido (200)

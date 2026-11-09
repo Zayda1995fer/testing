@@ -1,0 +1,69 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6/tasks-list-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 5 max VUs, 1m0s max duration (incl. graceful stop):
+              * default: 5 looping VUs for 30s (gracefulStop: 30s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ✓ list returns 200
+     ✓ list has 20 items
+
+     checks.........................: 100.00% 300 out of 300
+     data_received..................: 647 kB  21 kB/s
+     data_sent......................: 55 kB   1.8 kB/s
+     http_req_blocked...............: avg=14.41µs min=1.4µs   med=4.92µs  max=524.29µs p(90)=8.27µs   p(95)=14.89µs 
+     http_req_connecting............: avg=7.85µs  min=0s      med=0s      max=487.77µs p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=4.2ms   min=1.4ms   med=2.77ms  max=88.52ms  p(90)=5.12ms   p(95)=7.03ms  
+       { expected_response:true }...: avg=4.2ms   min=1.4ms   med=2.77ms  max=88.52ms  p(90)=5.12ms   p(95)=7.03ms  
+     ✓ { name:list }................: avg=3.38ms  min=1.4ms   med=2.87ms  max=14.91ms  p(90)=5.03ms   p(95)=6.61ms  
+   ✓ http_req_failed................: 0.00%   0 out of 172
+     http_req_receiving.............: avg=79.61µs min=16.05µs med=64.33µs max=425.52µs p(90)=136.69µs p(95)=181.34µs
+     http_req_sending...............: avg=25.25µs min=3.55µs  med=14.88µs max=507.14µs p(90)=40.33µs  p(95)=72.1µs  
+     http_req_tls_handshaking.......: avg=0s      min=0s      med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=4.09ms  min=1.34ms  med=2.67ms  max=88.37ms  p(90)=5.06ms   p(95)=6.9ms   
+     http_reqs......................: 172     5.666995/s
+     iteration_duration.............: avg=1s      min=1s      med=1s      max=1.01s    p(90)=1s       p(95)=1s      
+     iterations.....................: 150     4.942147/s
+     vus............................: 5       min=5          max=5
+     vus_max........................: 5       min=5          max=5
+
+
+default ✓ [ 100% ] 5 VUs  30s

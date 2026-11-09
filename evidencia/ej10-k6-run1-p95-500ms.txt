@@ -1,0 +1,67 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6/health-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 5 max VUs, 1m0s max duration (incl. graceful stop):
+              * default: 5 looping VUs for 30s (gracefulStop: 30s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ✓ health returns 200
+
+     checks.........................: 100.00% 150 out of 150
+     data_received..................: 133 kB  4.4 kB/s
+     data_sent......................: 13 kB   429 B/s
+     http_req_blocked...............: avg=31.89µs min=1.56µs   med=4.53µs  max=1.09ms   p(90)=8.84µs   p(95)=16.25µs 
+     http_req_connecting............: avg=14.85µs min=0s       med=0s      max=701.46µs p(90)=0s       p(95)=0s      
+   ✓ http_req_duration..............: avg=1.25ms  min=373.1µs  med=1.08ms  max=4.64ms   p(90)=2.07ms   p(95)=2.56ms  
+       { expected_response:true }...: avg=1.25ms  min=373.1µs  med=1.08ms  max=4.64ms   p(90)=2.07ms   p(95)=2.56ms  
+   ✓ http_req_failed................: 0.00%   0 out of 150
+     http_req_receiving.............: avg=62.73µs min=15.63µs  med=45.85µs max=291.16µs p(90)=126.76µs p(95)=177.26µs
+     http_req_sending...............: avg=28.31µs min=3.85µs   med=14.67µs max=302.73µs p(90)=53.34µs  p(95)=106.95µs
+     http_req_tls_handshaking.......: avg=0s      min=0s       med=0s      max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=1.15ms  min=273.55µs med=1ms     max=4.5ms    p(90)=1.97ms   p(95)=2.45ms  
+     http_reqs......................: 150     4.990073/s
+     iteration_duration.............: avg=1s      min=1s       med=1s      max=1s       p(90)=1s       p(95)=1s      
+     iterations.....................: 150     4.990073/s
+     vus............................: 5       min=5          max=5
+     vus_max........................: 5       min=5          max=5
+
+
+default ✓ [ 100% ] 5 VUs  30s

@@ -1,0 +1,58 @@
+FAIL test/integration/tasks.api.test.js
+  ● EJERCICIO 6 › 121-character title returns 400, not a 500 from the database
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 500
+
+      70 |     const token = await createTestUserAndGetToken();
+      71 |     const res = await request(app).post('/api/v1/tasks').set(auth(token)).send({ title: 'a'.repeat(121) });
+    > 72 |     expect(res.status).toBe(400);
+         |                        ^
+      73 |     expect(res.body.error).toBe('Enter a valid title.');
+      74 |   });
+      75 |
+
+      at Object.toBe (test/integration/tasks.api.test.js:72:24)
+
+FAIL test/unit/boundaries.test.js
+  ● title partitions and boundaries (1..120) › just over maximum
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      17 |   ])('%s', (_label, input, valid) => {
+      18 |     if (valid) expect(() => validateTitle(input)).not.toThrow();
+    > 19 |     else expect(() => validateTitle(input)).toThrow();
+         |                                             ^
+      20 |   });
+      21 | });
+      22 |
+
+      at toThrow (test/unit/boundaries.test.js:19:45)
+
+FAIL test/unit/validation.test.js
+  ● validateTitle › rejects a title longer than the limit
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      15 |
+      16 |   test('rejects a title longer than the limit', () => {
+    > 17 |     expect(() => validateTitle('a'.repeat(121))).toThrow();
+         |                                                  ^
+      18 |   });
+      19 |
+      20 |   // --- EJERCICIO 4: título válido con la longitud MÁXIMA permitida ---
+
+      at Object.toThrow (test/unit/validation.test.js:17:50)
+
+
+Test Suites: 3 failed, 4 passed, 7 total
+Tests:       3 failed, 76 passed, 79 total
+Snapshots:   0 total
+Time:        8.379 s, estimated 9 s
+Ran all test suites.
